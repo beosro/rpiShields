@@ -22,12 +22,12 @@ def init_serial():
 def do_this():
      
      print 'latitude\t\tlongitude'
-     print latitude+'\t\t'+longitude
+     print str(latitude)+'\t\t'+str(longitude)
      print ' '
 
      if latitude!='':
 	     	gpslogger = open("gpslog.txt", "w")
-	     	gpslogger.write(latitude+','+longitude+'\r\n')
+	     	gpslogger.write(str(latitude)+','+str(longitude)+'\r\n')
 	     	gpslogger.close()
 
    	
