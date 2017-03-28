@@ -1,11 +1,11 @@
-#Raspberry Pi Ds18b20 Temperature Sensor logger with Sixfab Xbee Shield
+##Raspberry Pi Ds18b20 Temperature Sensor logger with Sixfab Xbee Shield
 
 Anywhere you can connect to another nodes simply. Connect Xbee shield to Raspberry Pi and use ds18b20 sensor to log temperature information.
 
 1. Firstly, Connect your Raspberry Pi to internet and run `sudo apt-get update` to update your Raspberry Pi
 2. We should stop getty service on Raspbian.
   1. For non Raspberry Pi 3 machines, remember it’s /dev/ttyAMA0 that is linked to the getty (console) service. So you need to perform this command from a terminal window:
-    - `sudo systemctl disable serial-getty@ttyAMA0.service`
+    - `sudo systemctl stop serial-getty@ttyAMA0.service`
     - `sudo systemctl disable serial-getty@ttyAMA0.service`
   
   2. For Raspberry Pi 3’s the command is similar but referencing /dev/ttyS0:
