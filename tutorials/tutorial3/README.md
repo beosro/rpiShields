@@ -7,7 +7,7 @@ You can use Sixfab 3G/LTE Shields to connect internet with PPP connection. You c
 3. Install ppp application with `sudo apt-get install ppp`
 4. Edit /etc/ppp/peers/gprs file and add the following:
   ```
-  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" //INTERNET is my APN
+  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" #INTERNET is my APN
   ttyUSB3
   115200
   lock
