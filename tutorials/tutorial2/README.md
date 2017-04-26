@@ -6,7 +6,7 @@ Gprs shield use Uart connection on Raspberry Pi. You can use following transacti
 
 2. We should stop getty service on Raspbian.
   1. For non Raspberry Pi 3 machines, remember it’s /dev/ttyAMA0 that is linked to the getty (console) service. So you need to perform this command from a terminal window:
-    - `sudo systemctl disable serial-getty@ttyAMA0.service`
+    - `sudo systemctl stop serial-getty@ttyAMA0.service`
     - `sudo systemctl disable serial-getty@ttyAMA0.service`
   
   2. For Raspberry Pi 3’s the command is similar but referencing /dev/ttyS0:
@@ -25,7 +25,7 @@ Gprs shield use Uart connection on Raspberry Pi. You can use following transacti
 3. Install ppp application with `sudo apt-get install ppp`
 4. Edit /etc/ppp/peers/gprs file and add the following:
   ```
-  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" //INTERNET is my APN
+  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" #INTERNET is my APN
   serial0
   115200
   lock
