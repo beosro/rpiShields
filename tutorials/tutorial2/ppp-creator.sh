@@ -1,13 +1,13 @@
 #!/bin/sh
 
 echo "
-ABORT "BUSY"
-ABORT "NO CARRIER"
-ABORT "NO DIALTONE"
-ABORT "ERROR"
-ABORT "NO ANSWER"
+ABORT \"BUSY\"
+ABORT \"NO CARRIER\"
+ABORT \"NO DIALTONE\"
+ABORT \"ERROR\"
+ABORT \"NO ANSWER\"
 TIMEOUT 30
-"" AT
+\"\" AT
 OK ATE0
 OK ATI;+CSUB;+CSQ;+CPIN?;+COPS?;+CGREG?;&D2
 # Insert the APN provided by your network operator, default apn is $1
@@ -29,9 +29,9 @@ SAY \"\nGoodbay\n\"" > /etc/chatscripts/quectel-chat-disconnect
 echo "
 /dev/$2 115200
 # The chat script, customize your APN in this file
-connect 'chat -s -v -f /etc/chatscripts/quectel-chat-connect'
+connect 'chat -s -v -f /etc/chatscripts/quectel-chat-connect -T $1'
 # The close script
-disconnect 'chat -s -v -f /etc/chatscripts/quectel-chat-disconnect -T $1'
+disconnect 'chat -s -v -f /etc/chatscripts/quectel-chat-disconnect'
 # Hide password in debug messages
 hide-password
 # The phone is not required to authenticate
