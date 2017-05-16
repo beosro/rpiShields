@@ -72,9 +72,4 @@ ipcp-max-failure 30
 # Ask the peer for up to 2 DNS server addresses
 usepeerdns" > /etc/ppp/peers/gprs
 
-
-echo "Editing /etc/network/interfaces file"
-echo "
-auto gprs
-iface gprs inet ppp
-provider gprs" >> /etc/network/interfaces
+echo "Let`s use \"sudo pppd call gprs\" command and Surf"
