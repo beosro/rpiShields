@@ -72,4 +72,4 @@ ipcp-max-failure 30
 # Ask the peer for up to 2 DNS server addresses
 usepeerdns" > /etc/ppp/peers/gprs
 
-echo "Let`s use \"sudo pppd call gprs\" command and Surf"
+echo "Use \"sudo pppd call gprs\" command and Surf"
