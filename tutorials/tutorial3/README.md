@@ -4,40 +4,16 @@ You can use Sixfab 3G/LTE Shields to connect internet with PPP connection. You c
 
 1. Firstly, Connect your Raspberry Pi to internet and run `sudo apt-get update` to update your Raspberry Pi
 2. Make [First Tutorial](https://github.com/sixfab/rpiShields/tree/master/tutorials/tutorial1) to add Quectel Module support to your kernel.
-3. Install ppp application with `sudo apt-get install ppp`
-4. Edit /etc/ppp/peers/gprs file and add the following:
-  ```
-  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" #INTERNET is my APN
-  ttyUSB3
-  115200
-  lock
-  crtscts
-  modem
-  passive
-  novj
-  defaultroute
-  noipdefault
-  usepeerdns
-  noauth
-  hide-password
-  persist
-  holdoff 10
-  maxfail 0
-  debug
-
-  ```
-5. Edit /etc/network/interfaces  and add the following: 
-  ```
-  auto gprs
-  iface gprs inet ppp
-  provider gprs
+3. Download ppp-creator.sh script and run. Script will install ppp and creates config files.
+  - `wget https://raw.githubusercontent.com/sixfab/rpiShields/master/tutorials/tutorial2/ppp-creator.sh`
+  - `chmod +x ./ppp-creator.sh`
+  - `sudo ./ppp-creator.sh INTERNET ttyUSB3` # INTERNET is APN, check your cellular
   
-  ```
-6. Reboot your machine and Let's connect ;)
-7. run `ifconfig ppp0` at terminal window to see following outputs and see your ip<br/>
+4. Run `sudo pppd call gprs`
+5. run `ifconfig ppp0` at terminal window to see following outputs and see your ip<br/>
   ```
   ppp0      Link encap:Point-to-Point Protocol
-            inet addr:10.XX.XXX.XXX  P-t-P:192.168.254.254  Mask:255.255.255.255
+            inet addr:XX.XX.XXX.XXX  P-t-P:XX.XX.XX.XX  Mask:255.255.255.255
             UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
             RX packets:38 errors:0 dropped:0 overruns:0 frame:0
             TX packets:39 errors:0 dropped:0 overruns:0 carrier:0
