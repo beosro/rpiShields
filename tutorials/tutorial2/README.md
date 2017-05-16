@@ -14,48 +14,24 @@ Gprs shield use Uart connection on Raspberry Pi. You can use following transacti
     - `sudo systemctl disable serial-getty@ttyS0.service`
     
   3. You also need to remove the console from the cmdline.txt. If you edit this with:
-    - `sudo nano /boot/cmdline.txt`<br/><br/>
+    - `sudo nano /boot/cmdline.txt`
       ```
       dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
-      ```<br/><br/>
+      ```
       remove the line: console=serial0,115200 and save and reboot for changes to take effect.
   4. You also need to enable uart with edit /boot/config.txt file
     - `sudo nano /boot/config.txt` and add `enable_uart=1` to bottom of file then save and reboot for changes to take effect.
       
-3. Install ppp application with `sudo apt-get install ppp`
-4. Edit /etc/ppp/peers/gprs file and add the following:
-  ```
-  connect "/usr/sbin/chat -v -f /etc/chatscripts/gprs -T INTERNET" #INTERNET is my APN
-  serial0
-  115200
-  lock
-  crtscts
-  modem
-  passive
-  novj
-  defaultroute
-  noipdefault
-  usepeerdns
-  noauth
-  hide-password
-  persist
-  holdoff 10
-  maxfail 0
-  debug
-
-  ```
-5. Edit /etc/network/interfaces  and add the following: 
-  ```
-  auto gprs
-  iface gprs inet ppp
-  provider gprs
+3. Download ppp-creator.sh script and run. Script will install ppp and creates config files.
+  - `wget https://raw.githubusercontent.com/sixfab/rpiShields/master/tutorials/tutorial2/ppp-creator.sh`
+  - `chmod +x ./ppp-creator.sh`
+  - `sudo ./ppp-creator.sh INTERNET ttyAMA0` # Rpi3 > ttyS0 , others ttyAMA0 # INTERNET is APN, check your cellular
   
-  ```
-6. Reboot your machine and Let's connect ;)
-7. run `ifconfig ppp0` at terminal window to see following outputs and see your ip<br/>
+4. Run `sudo pppd call gprs`
+5. run `ifconfig ppp0` at terminal window to see following outputs and see your ip<br/>
   ```
   ppp0      Link encap:Point-to-Point Protocol
-            inet addr:10.XX.XXX.XXX  P-t-P:192.168.254.254  Mask:255.255.255.255
+            inet addr:XX.XX.XXX.XXX  P-t-P:XX.XX.XX.XX  Mask:255.255.255.255
             UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
             RX packets:38 errors:0 dropped:0 overruns:0 frame:0
             TX packets:39 errors:0 dropped:0 overruns:0 carrier:0
