@@ -5,7 +5,7 @@ You can use Sixfab 3G/LTE Shields to connect internet with PPP connection. You c
 1. Firstly, Connect your Raspberry Pi to internet and run `sudo apt-get update` to update your Raspberry Pi
 2. Make [First Tutorial](https://github.com/sixfab/rpiShields/tree/master/tutorials/tutorial1) to add Quectel Module support to your kernel.
 3. Download ppp-creator.sh script and run. Script will install ppp and creates config files.
-  - `wget https://raw.githubusercontent.com/sixfab/rpiShields/master/tutorials/tutorial2/ppp-creator.sh`
+  - `wget https://raw.githubusercontent.com/sixfab/rpiShields/master/tutorials/tutorial3/ppp-creator.sh`
   - `chmod +x ./ppp-creator.sh`
   - `sudo ./ppp-creator.sh INTERNET ttyUSB3` # INTERNET is APN, check your cellular
   
