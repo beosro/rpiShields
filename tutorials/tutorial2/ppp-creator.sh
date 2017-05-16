@@ -1,5 +1,13 @@
 #!/bin/sh
 
+echo "install ppp"
+apt-get install ppp
+
+echo "creating directories"
+mkdir -p /etc/chatscripts
+mkdir -p /etc/ppp/peers
+
+echo "creating script file : /etc/chatscripts/quectel-chat-connect"
 echo "
 ABORT \"BUSY\"
 ABORT \"NO CARRIER\"
@@ -16,6 +24,7 @@ OK ATD*99#
 CONNECT" > /etc/chatscripts/quectel-chat-connect
 
 
+echo "creating script file : /etc/chatscripts/quectel-chat-disconnect"
 echo "
 ABORT \"ERROR\"
 ABORT \"NO DIALTONE\"
@@ -26,6 +35,7 @@ SAY \"\nSending break to the modem\n\"
 SAY \"\nGoodbay\n\"" > /etc/chatscripts/quectel-chat-disconnect
 
 
+echo "creating script file : /etc/ppp/peers/gprs"
 echo "
 /dev/$2 115200
 # The chat script, customize your APN in this file
@@ -63,6 +73,7 @@ ipcp-max-failure 30
 usepeerdns" > /etc/ppp/peers/gprs
 
 
+echo "Editing /etc/network/interfaces file"
 echo "
 auto gprs
 iface gprs inet ppp
