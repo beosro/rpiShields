@@ -49,5 +49,16 @@
         </TextBox>
         <Button Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" Margin="450,161,0,0" Background="#FF323232" Foreground="White" VerticalAlignment="Top" Width="75" Click="ConnectButton_Click"/>
         <Label Name="LblMessage" Content=""  Width="448" HorizontalAlignment="Left" Height="20" Foreground="White"  Margin="272,307,0,0" Padding="0,0,0,0" VerticalAlignment="Top" Background="#FF323232"/>
+        <TextBox x:Name="apn" HorizontalAlignment="Left" Height="23" Margin="450,190,0,0" TextWrapping="Wrap" Text="INTERNET" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.5,0.5" TextAlignment="Center">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.137"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="APN:" HorizontalAlignment="Left" Margin="402,189,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>

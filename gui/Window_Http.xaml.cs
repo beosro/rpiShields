@@ -215,7 +215,7 @@ namespace SixFabWpf
 
             do
             {
-                SendToSerial("AT+QICSGP=1,\"INTERNET\",\"\",\"\"");
+                SendToSerial("AT+QICSGP=1,\""+apn.Text+"\",\"\",\"\"");
 
                 if (WaitFor("OK\r\n"))
                 {

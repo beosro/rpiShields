@@ -50,5 +50,16 @@
             </TextBox.ContextMenu>
         </TextBox>
         <Label Name="mapLocation" Content="-74.466928,41.052116"  Foreground="White" Margin="320,107,321,0" VerticalAlignment="Top" Width="348" FontSize="22" FontWeight="Bold"  HorizontalContentAlignment="Center"/>
+        <TextBox Name="apn" HorizontalAlignment="Left" Height="23" Margin="454,199,0,0" TextWrapping="Wrap" Text="INTERNET" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.5,0.5" TextAlignment="Center">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.137"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="APN:" HorizontalAlignment="Left" Margin="413,196,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>

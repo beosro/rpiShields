@@ -6,6 +6,8 @@
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
+    
+    
 
     <Grid  HorizontalAlignment="Left" Width="989" Height="700" VerticalAlignment="Top" Margin="0,0,0,0">
         <Image Source="backgroundHttp.png" Height="331" Width="989" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"/>
@@ -22,6 +24,16 @@
             </Label.Background>
         </Label>
 
+        <TextBox Name="apn" HorizontalAlignment="Left" Height="23" Margin="453,158,0,0" TextWrapping="Wrap" Text="INTERNET" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.5,0.5" TextAlignment="Center">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.137"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
 
         <Button Content="Get Http Source" HorizontalAlignment="Left" Margin="442,124,0,0" VerticalAlignment="Top" Width="105" Click="HttpGet_Button_Click" Background="#FF323232" Foreground="#FFEDEDED"/>
         <TextBox Name="Url" HorizontalAlignment="Left" Height="29" Margin="246,81,0,0" TextWrapping="Wrap" Text="http://api.openweathermap.org/data/2.5/weather?q=new%20york,ny&amp;appid=694e71ec200b98326b1d04501d894495" VerticalAlignment="Top" TextAlignment="Left" Width="503" FontSize="9" FontWeight="Bold"/>
@@ -49,5 +61,6 @@
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
+        <Label Content="APN:" HorizontalAlignment="Left" Margin="414,155,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>
