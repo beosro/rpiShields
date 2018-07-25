@@ -30,7 +30,5 @@
     1. 3G/4G-LTE Schematic
     2. Gprs Schematic 
     3. Xbee Schematic
-    4. Gps Schematic 
-  - Pcb Design Files<br/>
-    `Eagle files will add!`
+    4. Gps Schematic
     
