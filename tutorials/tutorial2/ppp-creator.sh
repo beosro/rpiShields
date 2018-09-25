@@ -17,7 +17,7 @@ ABORT \"NO ANSWER\"
 TIMEOUT 30
 \"\" AT
 OK ATE0
-OK ATI;+CSUB;+CSQ;+CPIN?;+COPS?;+CGREG?;&D2
+OK ATI;+CSUB;+CSQ;+COPS?;+CGREG?;&D2
 # Insert the APN provided by your network operator, default apn is $1
 OK AT+CGDCONT=1,\"IP\",\"\\T\",,0,0
 OK ATD*99#
