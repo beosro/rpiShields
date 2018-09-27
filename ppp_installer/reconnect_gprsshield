@@ -21,7 +21,6 @@ while true; do
 		exit 0
 		else
 			echo "Connection down, reconnecting..."
-			sudo poff
 			sudo pon
 		fi
 	fi
