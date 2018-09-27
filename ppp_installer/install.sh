@@ -119,9 +119,8 @@ do
 			  
 			  break;;
 			  
-		N)    echo "${YELLOW}You choose Base Shield${SET}" 
-                      break;;
-		*)    echo "${YELLOW}You did not choose y, N${SET}";;
+		N)   break;;
+		*)   echo "${YELLOW}You did not choose y, N${SET}";;
 	esac
 done
 
