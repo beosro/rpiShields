@@ -17,6 +17,7 @@ while true; do
 		gpio -g write 11 1
 		sleep 2
 		gpio -g write 11 0
+		sleep 2
 	else
 		NCHECK='ifconfig ppp'
 		NCHECK1='echo $NCHECK | cut -d " " -f 1'
