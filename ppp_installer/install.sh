@@ -46,15 +46,12 @@ do
 	read answer2
 	
 	case $answer2 in
-		y)  
-		    break;;
+		y)  break;;
 		
 		N)  echo "${YELLOW}rpi-update${SET}"
 			rpi-update
-
 		    break;;
 		*)  echo "${YELLOW}You did not choose y, N${SET}";;
-		
 	esac
 done
 
