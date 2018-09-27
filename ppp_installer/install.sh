@@ -40,8 +40,23 @@ if [ $? -ne 0 ]; then
     exit 1;
 fi
 
-echo "${YELLOW}rpi-update${SET}"
-# rpi-update
+while [ 1 ]
+do
+	echo "${YELLOW}Do you have updated kernel ? [y/N] ${SET}"
+	read answer2
+	
+	case $answer3 in
+		y)  
+		    break;;
+		
+		N)  echo "${YELLOW}rpi-update${SET}"
+			rpi-update
+
+		    break;;
+		*)  echo "${YELLOW}You did not choose y, N${SET}";;
+		
+	esac
+done
 
 echo "${YELLOW}ppp install${SET}"
 apt-get install ppp
@@ -82,9 +97,9 @@ fi
 while [ 1 ]
 do
 	echo "${YELLOW}Do you want to activate auto connect/reconnect service ? [y/N] ${SET}"
-	read answer2
+	read answer3
 
-	case $answer2 in
+	case $answer3 in
 		y)    echo "${YELLOW}You choose GSM/GPRS Shield${SET}" 
 		
 			  echo "${YELLOW}Downloading setup file${SET}"
