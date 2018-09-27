@@ -81,14 +81,9 @@ sed -i "s/#APN/$carrierapn/" provider
 sed -i "s/#DEVICE/$devicename/" provider
 mv provider /etc/ppp/peers/provider
 
-if grep -q 'ppp0' /etc/network/interfaces; then
-    echo "iface ppp0 inet ppp\nprovider provider"> /etc/network/interfaces
-fi
-
-
 if grep -q 'route' /etc/ppp/ip-up; then
-    echo "sudo route del default" > /etc/ppp/ip-up
-    echo "sudo route add default ppp0" > /etc/ppp/ip-up
+    echo "sudo route del default" >> /etc/ppp/ip-up
+    echo "sudo route add default ppp0" >> /etc/ppp/ip-up
 fi
 
 while [ 1 ]
