@@ -1,0 +1,17 @@
+#!/bin/sh
+
+	while true; do
+
+	NCHECK='ifconfig ppp'
+	NCHECK1='echo $NCHECK | cut -d " " -f 1'
+
+	if [ "$NCHECK1" = "ppp0" ]; then
+		echo "Connection up, reconnect not required..."
+	exit 0
+	else
+		echo "Connection down, reconnecting..."
+		sudo pon
+	fi
+
+	sleep 1
+done
