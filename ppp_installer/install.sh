@@ -86,6 +86,12 @@ if ! (grep -q 'route' /etc/ppp/ip-up ); then
     echo "sudo route add default ppp0" >> /etc/ppp/ip-up
 fi
 
+if [ $answer -eq 2 ]; then
+	if ! (grep -q 'max_usb_current' /boot/config.txt ); then
+		echo "max_usb_current=1" >> /boot/config.txt
+	fi
+fi
+
 while [ 1 ]
 do
 	echo "${YELLOW}Do you want to activate auto connect/reconnect service ? [y/N] ${SET}"
