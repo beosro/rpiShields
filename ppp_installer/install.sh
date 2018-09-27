@@ -92,9 +92,7 @@ do
 	read answer3
 
 	case $answer3 in
-		y)    echo "${YELLOW}You choose GSM/GPRS Shield${SET}" 
-		
-			  echo "${YELLOW}Downloading setup file${SET}"
+		y)    echo "${YELLOW}Downloading setup file${SET}"
 			  
 			  wget --no-check-certificate https://raw.githubusercontent.com/sixfab/rpiShields/master/ppp_installer/reconnect_service -O reconnect.service
 			  
