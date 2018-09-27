@@ -45,7 +45,7 @@ do
 	echo "${YELLOW}Do you have updated kernel ? [y/N] ${SET}"
 	read answer2
 	
-	case $answer3 in
+	case $answer2 in
 		y)  
 		    break;;
 		
