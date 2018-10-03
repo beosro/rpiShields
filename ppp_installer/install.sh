@@ -5,10 +5,10 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 SET='\033[0m'
 
-echo "${YELLOW}Please choice:${SET}"
+echo "${YELLOW}Please choose your Sixfab Shield:${SET}"
 echo "${YELLOW}1: GSM/GPRS Shield${SET}"
-echo "${YELLOW}2: Base Shield${SET}"
-echo "${YELLOW}3: Cellular Iot Shield${SET}"
+echo "${YELLOW}2: 3G, 4G/LTE Base Shield${SET}"
+echo "${YELLOW}3: Cellular IoT Shield${SET}"
 
 read answer
 case $answer in
@@ -42,13 +42,13 @@ fi
 
 while [ 1 ]
 do
-	echo "${YELLOW}Do you have updated kernel ? [y/N] ${SET}"
+	echo "${YELLOW}Do you have updated kernel ? [Y/n] ${SET}"
 	read answer2
 	
 	case $answer2 in
-		y)  break;;
+		Y)  break;;
 		
-		N)  echo "${YELLOW}rpi-update${SET}"
+		n)  echo "${YELLOW}rpi-update${SET}"
 			rpi-update
 		    break;;
 		*)  echo "${YELLOW}You did not choose y, N${SET}";;
@@ -61,7 +61,7 @@ apt-get install ppp
 echo "${YELLOW}What is your carrier APN?${SET}"
 read carrierapn 
 
-echo "${YELLOW}What is your device?${SET}"
+echo "${YELLOW}What is your device communication PORT? (ttyS0/ttyUSB3/etc.)${SET}"
 read devicename 
 
 EXTRA='OK AT+QCFG="nwscanseq",01,1\nOK AT+QCFG="nwscanmode",1,1\nOK AT+QCFG="iotopmode",2,1'
@@ -94,11 +94,11 @@ fi
 
 while [ 1 ]
 do
-	echo "${YELLOW}Do you want to activate auto connect/reconnect service ? [y/N] ${SET}"
+	echo "${YELLOW}Do you want to activate auto connect/reconnect service at R.Pi boot up? [Y/n] ${SET}"
 	read answer3
 
 	case $answer3 in
-		y)    echo "${YELLOW}Downloading setup file${SET}"
+		Y)    echo "${YELLOW}Downloading setup file${SET}"
 			  
 			  wget --no-check-certificate https://raw.githubusercontent.com/sixfab/rpiShields/master/ppp_installer/reconnect_service -O reconnect.service
 			  
@@ -125,8 +125,9 @@ do
 			  
 			  break;;
 			  
-		N)   break;;
-		*)   echo "${YELLOW}You did not choose y, N${SET}";;
+		n)    echo"${YELLOW}To connect to internet run \"sudo pon\" and to disconnect run \"sudo poff\" "
+			  break;;
+		*)   echo "${YELLOW}You did not choose Y, N${SET}";;
 	esac
 done
 
