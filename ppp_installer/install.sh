@@ -12,10 +12,10 @@ echo "${YELLOW}3: Cellular IoT Shield${SET}"
 
 read answer
 case $answer in
-    1)    echo "${YELLOW}You choose GSM/GPRS Shield${SET}";;
-    2)    echo "${YELLOW}You choose Base Shield${SET}";;
-    3)    echo "${YELLOW}You choose Cellular Iot Shield${SET}";;
-    *)    echo "${YELLOW}You did not choose 1, 2 or 3${SET}"; exit 1;
+    1)    echo "${YELLOW}You chose GSM/GPRS Shield${SET}";;
+    2)    echo "${YELLOW}You chose Base Shield${SET}";;
+    3)    echo "${YELLOW}You chose Cellular Iot Shield${SET}";;
+    *)    echo "${YELLOW}You did not chose 1, 2 or 3${SET}"; exit 1;
 esac
 
 echo "${YELLOW}Downloading setup files${SET}"
@@ -127,7 +127,7 @@ do
 			  
 		n)    echo "${YELLOW}To connect to internet run \"sudo pon\" and to disconnect run \"sudo poff\" "
 			  break;;
-		*)   echo "${YELLOW}You did not choose Y, N${SET}";;
+		*)   echo "${YELLOW}You did not chose Y, N${SET}";;
 	esac
 done
 
