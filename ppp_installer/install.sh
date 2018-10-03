@@ -125,7 +125,7 @@ do
 			  
 			  break;;
 			  
-		n)    echo"${YELLOW}To connect to internet run \"sudo pon\" and to disconnect run \"sudo poff\" "
+		n)    echo "${YELLOW}To connect to internet run \"sudo pon\" and to disconnect run \"sudo poff\" "
 			  break;;
 		*)   echo "${YELLOW}You did not choose Y, N${SET}";;
 	esac
