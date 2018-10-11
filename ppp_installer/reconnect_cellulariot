@@ -19,12 +19,10 @@ while true; do
 		gpio -g write 11 0
 		sleep 2
 	else
-		NCHECK='ifconfig ppp'
-		NCHECK1='echo $NCHECK | cut -d " " -f 1'
+		ping -c 1 8.8.8.8
 
-		if [ "$NCHECK1" = "ppp0" ]; then
+		if [ $? -eq 0 ]; then
 			echo "Connection up, reconnect not required..."
-		exit 0
 		else
 			echo "Connection down, reconnecting..."
 			sudo pon
